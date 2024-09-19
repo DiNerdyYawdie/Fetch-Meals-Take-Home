@@ -13,13 +13,13 @@ import Foundation
 //ID for fetching the meal details by its ID.
 
 enum Endpoints {
-    case mealsList
+    case mealsList(mealCategory: String)
     case mealDetail
     
     var endpoint: String {
         switch self {
-        case .mealsList:
-            return "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert"
+        case .mealsList(let mealCategory):
+            return "https://themealdb.com/api/json/v1/1/filter.php?c=\(mealCategory)"
         case .mealDetail:
             return "https://themealdb.com/api/json/v1/1/lookup.php?i=MEAL"
         }

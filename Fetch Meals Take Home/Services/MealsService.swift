@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MealsService {
-    func fetchMeals() async throws -> [Meal]
+    func fetchMeals(mealCategory: MealCategories) async throws -> [Meal]
 }
 
 enum MealServiceError: Error {
@@ -43,8 +43,8 @@ class MealsServiceImpl: MealsService {
         self.session = session
     }
     
-    func fetchMeals() async throws -> [Meal] {
-        guard let url = URL(string: Endpoints.mealsList.endpoint) else {
+    func fetchMeals(mealCategory: MealCategories = .dessert) async throws -> [Meal] {
+        guard let url = URL(string: Endpoints.mealsList(mealCategory: mealCategory.rawValue).endpoint) else {
             throw MealServiceError.urlError
         }
         
