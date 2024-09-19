@@ -23,8 +23,9 @@ class MealsViewModel: ObservableObject {
     func fetchMeals() async {
         do {
             isLoading = true
-            self.meals = try await services.fetchMeals()
-            dump(self.meals)
+            let meals = try await services.fetchMeals()
+            
+            self.meals = meals.sorted { $0.strMeal < $1.strMeal }
             isLoading = false
         } catch {
             isLoading = false
