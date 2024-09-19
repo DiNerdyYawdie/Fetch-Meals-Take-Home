@@ -13,23 +13,51 @@ struct MealDetailsView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            Form {
                 if let mealDetails = viewModel.mealDetails {
                     
-                    Text(mealDetails.strMeal)
-                    
-                    Text(mealDetails.strInstructions)
-                    
-                    List(mealDetails.ingredientsAndMeasurements, id: \.ingredient) { mealMeasurements in
-                        Text(mealMeasurements.ingredient)
-                        
-                        Text(mealMeasurements.measurement)
+                    Section {
+                        Text(mealDetails.strInstructions)
+                    } header: {
+                        Text("Directions")
                     }
+
+                    
+                    Section {
+                        List(mealDetails.ingredientsAndMeasurements, id: \.ingredient) { mealMeasurements in
+                            
+                            HStack {
+                                Text(mealMeasurements.ingredient.capitalized)
+                                
+                                Spacer()
+                                
+                                Text(mealMeasurements.measurement)
+                            }
+                            
+                        }
+                    } header: {
+                        Text("Measurements/Instructions")
+                    }
+
+                    
                     
                 } else {
-                    ContentUnavailableView("Unable to fetch details for this meal", systemImage: "carrot.fill")
+                    ContentUnavailableView(label: {
+                        Label("Unable to fetch meal details", systemImage: "carrot.fill")
+                    }, actions:  {
+                        Button(action: {
+                            Task {
+                                await viewModel.fetchMealDetails()
+                            }
+                        }, label: {
+                            Text("Retry")
+                        })
+                    })
+                    
                 }
             }
+            .navigationTitle(viewModel.mealDetails?.strMeal ?? "")
+            .navigationBarTitleDisplayMode(.inline)
             .task {
                 await viewModel.fetchMealDetails()
             }
@@ -38,5 +66,5 @@ struct MealDetailsView: View {
 }
 
 #Preview {
-    MealDetailsView(viewModel: MealDetailsViewModel(services: MealsServiceImpl(), mealID: "1234"))
+    MealDetailsView(viewModel: MealDetailsViewModel(services: MealsServiceImpl(), mealID: "52772"))
 }

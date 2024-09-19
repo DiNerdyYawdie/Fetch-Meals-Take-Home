@@ -24,6 +24,8 @@ struct MealsView: View {
                 }
             }
             .listStyle(.plain)
+            .navigationTitle("Meals")
+            .navigationBarTitleDisplayMode(.inline)
             .task {
                 await viewModel.fetchMeals()
             }
