@@ -13,28 +13,60 @@ protocol MealsService {
 
 enum MealServiceError: Error {
     case urlError
-    case httpError
+    case httpError(statusCode: String)
     case decodeError
-    case unknown
+    case urlResponseError
+    case unknown(description: String)
     
     /// Readable text to show based on error
     var errorMessage: String {
         switch self {
         case .urlError:
             return "URL error"
-        case .httpError:
-            return "HTTP error"
+        case .httpError(let statusCode):
+            return "HTTP error, status code: \(statusCode)"
         case .decodeError:
             return "Decode error"
-        case .unknown:
-            return "Unknown error"
+        case .urlResponseError:
+            return "URL Response Error"
+        case .unknown(let description):
+            return "Unknown error: \(description)"
         }
     }
 }
 
 class MealsServiceImpl: MealsService {
     
+    let session: URLSession
+    
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+    
     func fetchMeals() async throws -> [Meal] {
-        return []
+        guard let url = URL(string: Endpoints.mealsList.endpoint) else {
+            throw MealServiceError.urlError
+        }
+        
+        do {
+            let (data, response) = try await session.data(from: url)
+            
+            guard let httpURLResponse = response as? HTTPURLResponse else {
+                throw MealServiceError.urlResponseError
+            }
+            
+            guard (200...299).contains(httpURLResponse.statusCode) else {
+                throw MealServiceError.httpError(statusCode: String(httpURLResponse.statusCode))
+            }
+            
+            let mealResponse = try JSONDecoder().decode(MealResponse.self, from: data)
+            return mealResponse.meals
+        } catch is DecodingError {
+            throw MealServiceError.decodeError
+        } catch is URLError {
+            throw MealServiceError.urlError
+        } catch {
+            throw MealServiceError.unknown(description: error.localizedDescription)
+        }
     }
 }

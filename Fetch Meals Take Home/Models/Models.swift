@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct MealResponse: Identifiable {
-    let id = UUID()
+struct MealResponse: Identifiable, Decodable {
+    var id = UUID()
     let meals: [Meal]
 }
 
-struct Meal: Identifiable {
-    let id = UUID()
+struct Meal: Identifiable, Decodable {
+    var id = UUID()
     let strMeal: String
     let strMealThumb: URL
     let idMeal: String
