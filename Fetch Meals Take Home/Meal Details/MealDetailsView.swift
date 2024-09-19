@@ -26,13 +26,7 @@ struct MealDetailsView: View {
                     Section {
                         List(mealDetails.ingredientsAndMeasurements, id: \.ingredient) { mealMeasurements in
                             
-                            HStack {
-                                Text(mealMeasurements.ingredient.capitalized)
-                                
-                                Spacer()
-                                
-                                Text(mealMeasurements.measurement)
-                            }
+                            MealDetailRowView(mealMesurements: mealMeasurements)
                             
                         }
                     } header: {

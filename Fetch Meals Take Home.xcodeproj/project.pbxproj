@@ -20,6 +20,7 @@
 		6E1271552C9BC97000293DD0 /* MealDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1271542C9BC97000293DD0 /* MealDetailsView.swift */; };
 		6E1271572C9BC97B00293DD0 /* MealDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1271562C9BC97B00293DD0 /* MealDetailsViewModel.swift */; };
 		6E12715A2C9BCB2B00293DD0 /* MealRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1271592C9BCB2B00293DD0 /* MealRowView.swift */; };
+		6ED2EB632C9C5211002131D5 /* MealDetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2EB622C9C5211002131D5 /* MealDetailRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		6E1271542C9BC97000293DD0 /* MealDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsView.swift; sourceTree = "<group>"; };
 		6E1271562C9BC97B00293DD0 /* MealDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewModel.swift; sourceTree = "<group>"; };
 		6E1271592C9BCB2B00293DD0 /* MealRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRowView.swift; sourceTree = "<group>"; };
+		6ED2EB622C9C5211002131D5 /* MealDetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				6E1271542C9BC97000293DD0 /* MealDetailsView.swift */,
 				6E1271562C9BC97B00293DD0 /* MealDetailsViewModel.swift */,
+				6ED2EB612C9C51F7002131D5 /* Meal Detail Row */,
 			);
 			path = "Meal Details";
 			sourceTree = "<group>";
@@ -148,6 +151,14 @@
 				6E1271592C9BCB2B00293DD0 /* MealRowView.swift */,
 			);
 			path = "Meal Row View";
+			sourceTree = "<group>";
+		};
+		6ED2EB612C9C51F7002131D5 /* Meal Detail Row */ = {
+			isa = PBXGroup;
+			children = (
+				6ED2EB622C9C5211002131D5 /* MealDetailRowView.swift */,
+			);
+			path = "Meal Detail Row";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +234,7 @@
 				6E1271372C9A897400293DD0 /* ContentView.swift in Sources */,
 				6E1271552C9BC97000293DD0 /* MealDetailsView.swift in Sources */,
 				6E1271492C9A8A7A00293DD0 /* MealsService.swift in Sources */,
+				6ED2EB632C9C5211002131D5 /* MealDetailRowView.swift in Sources */,
 				6E1271462C9A8A4A00293DD0 /* MealsViewModel.swift in Sources */,
 				6E1271352C9A897400293DD0 /* Fetch_Meals_Take_HomeApp.swift in Sources */,
 				6E1271522C9BC32900293DD0 /* MealCategories.swift in Sources */,
