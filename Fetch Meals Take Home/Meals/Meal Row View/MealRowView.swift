@@ -9,32 +9,34 @@ import SwiftUI
 
 struct MealRowView: View {
     
-    let meal: Meal
+    @ObservedObject var viewModel: RowViewModel
     
     var body: some View {
         GroupBox {
             VStack(alignment: .leading) {
                 
-                // TODO: switch to SDWebImageSwiftUI or implement local caching for images
-                AsyncImage(url: meal.strMealThumb) { image in
-                    image
+                if let postImage = viewModel.uiImage {
+                   Image(uiImage: postImage)
                         .resizable()
+                        .cornerRadius(4)
                         .frame(height: 200)
                         .frame(maxWidth: .infinity)
-                        .cornerRadius(4)
-                } placeholder: {
+                } else {
                     ProgressView()
                 }
                 
-                Text(meal.strMeal)
+                Text(viewModel.meal.strMeal)
                     .font(.title3)
                     .fontWeight(.medium)
 
+            }
+            .task {
+                await viewModel.loadImage()
             }
         }
     }
 }
 
 #Preview {
-    MealRowView(meal: Meal(strMeal: "Baked salmon with fennel & tomatoes", strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/1548772327.jpg")!, idMeal: "52959"))
+    MealRowView(viewModel: RowViewModel(meal: Meal(strMeal: "Baked salmon with fennel & tomatoes", strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/1548772327.jpg")!, idMeal: "52959"), cacheService: ImageCacheServiceImpl()))
 }

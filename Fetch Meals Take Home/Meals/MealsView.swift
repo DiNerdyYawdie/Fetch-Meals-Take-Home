@@ -18,7 +18,7 @@ struct MealsView: View {
                     NavigationLink {
                         MealDetailsView(viewModel: MealDetailsViewModel(services: viewModel.services, mealID: meal.idMeal))
                     } label: {
-                        MealRowView(meal: meal)
+                        MealRowView(viewModel: RowViewModel(meal: meal, cacheService: ImageCacheServiceImpl()))
                     }
 
                 }

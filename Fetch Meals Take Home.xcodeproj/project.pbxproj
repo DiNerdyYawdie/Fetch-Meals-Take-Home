@@ -21,6 +21,8 @@
 		6E1271572C9BC97B00293DD0 /* MealDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1271562C9BC97B00293DD0 /* MealDetailsViewModel.swift */; };
 		6E12715A2C9BCB2B00293DD0 /* MealRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1271592C9BCB2B00293DD0 /* MealRowView.swift */; };
 		6ED2EB632C9C5211002131D5 /* MealDetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2EB622C9C5211002131D5 /* MealDetailRowView.swift */; };
+		6ED2EB652C9C533D002131D5 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2EB642C9C533D002131D5 /* ImageCacheService.swift */; };
+		6ED2EB672C9C5369002131D5 /* MealRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2EB662C9C5369002131D5 /* MealRowViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		6E1271562C9BC97B00293DD0 /* MealDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewModel.swift; sourceTree = "<group>"; };
 		6E1271592C9BCB2B00293DD0 /* MealRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRowView.swift; sourceTree = "<group>"; };
 		6ED2EB622C9C5211002131D5 /* MealDetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailRowView.swift; sourceTree = "<group>"; };
+		6ED2EB642C9C533D002131D5 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		6ED2EB662C9C5369002131D5 /* MealRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRowViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				6E1271482C9A8A7A00293DD0 /* MealsService.swift */,
+				6ED2EB642C9C533D002131D5 /* ImageCacheService.swift */,
 				6E1271502C9BC31B00293DD0 /* Meal Categories */,
 				6E12714A2C9BB44600293DD0 /* Endpoints */,
 			);
@@ -149,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				6E1271592C9BCB2B00293DD0 /* MealRowView.swift */,
+				6ED2EB662C9C5369002131D5 /* MealRowViewModel.swift */,
 			);
 			path = "Meal Row View";
 			sourceTree = "<group>";
@@ -237,8 +243,10 @@
 				6ED2EB632C9C5211002131D5 /* MealDetailRowView.swift in Sources */,
 				6E1271462C9A8A4A00293DD0 /* MealsViewModel.swift in Sources */,
 				6E1271352C9A897400293DD0 /* Fetch_Meals_Take_HomeApp.swift in Sources */,
+				6ED2EB672C9C5369002131D5 /* MealRowViewModel.swift in Sources */,
 				6E1271522C9BC32900293DD0 /* MealCategories.swift in Sources */,
 				6E12714C2C9BB44F00293DD0 /* Endpoints.swift in Sources */,
+				6ED2EB652C9C533D002131D5 /* ImageCacheService.swift in Sources */,
 				6E1271442C9A8A4300293DD0 /* MealsView.swift in Sources */,
 				6E1271572C9BC97B00293DD0 /* MealDetailsViewModel.swift in Sources */,
 				6E12714F2C9BB6F000293DD0 /* Models.swift in Sources */,
