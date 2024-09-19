@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+protocol MealsService {
+    func fetchMeals() async throws
+}
+
+class MealsServiceImpl: MealsService {
+    
+    func fetchMeals() async throws {
+        
+    }
+}
