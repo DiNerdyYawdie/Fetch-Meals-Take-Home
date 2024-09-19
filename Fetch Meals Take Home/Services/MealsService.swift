@@ -61,7 +61,8 @@ class MealsServiceImpl: MealsService {
             
             let mealResponse = try JSONDecoder().decode(MealResponse.self, from: data)
             return mealResponse.meals
-        } catch is DecodingError {
+        } catch let decodingError as DecodingError {
+            print(decodingError)
             throw MealServiceError.decodeError
         } catch is URLError {
             throw MealServiceError.urlError

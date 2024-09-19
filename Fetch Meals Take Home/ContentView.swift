@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let services: MealsService = MealsServiceImpl()
+    
     var body: some View {
-        MealsView(viewModel: MealsViewModel())
+        MealsView(viewModel: MealsViewModel(services: services))
     }
 }
 

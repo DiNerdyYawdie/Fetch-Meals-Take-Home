@@ -12,10 +12,17 @@ struct MealsView: View {
     @ObservedObject var viewModel: MealsViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                Text("Test")
+            }
+            .task {
+                await viewModel.fetchMeals()
+            }
+        }
     }
 }
 
 #Preview {
-    MealsView(viewModel: MealsViewModel())
+    MealsView(viewModel: MealsViewModel(services: MealsServiceImpl()))
 }

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CDB809C0-DA95-45D6-8B45-B1B55289D3BB"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8AFC5F77-5D33-4F46-A836-C9F71FCDF758"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fetch Meals Take Home/Services/MealsService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "fetchMeals()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8AFC5F77-5D33-4F46-A836-C9F71FCDF758 - d6ad4cd143e464da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Fetch_Meals_Take_Home.MealsServiceImpl.fetchMeals() async throws -&gt; Swift.Array&lt;Fetch_Meals_Take_Home.Meal&gt;"
+                  moduleName = "Fetch Meals Take Home"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chad-michaelmuirhead/iOS%20Apps/Fetch%20Meals%20Take%20Home/Fetch%20Meals%20Take%20Home/Services/MealsService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66">
+               </Location>
+               <Location
+                  uuid = "8AFC5F77-5D33-4F46-A836-C9F71FCDF758 - d1df55a5fc8306d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Fetch_Meals_Take_Home.MealsServiceImpl.fetchMeals() async throws -&gt; Swift.Array&lt;Fetch_Meals_Take_Home.Meal&gt;"
+                  moduleName = "Fetch Meals Take Home"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chad-michaelmuirhead/iOS%20Apps/Fetch%20Meals%20Take%20Home/Fetch%20Meals%20Take%20Home/Services/MealsService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7CBE3567-C1FD-41ED-8CDE-4CA5C064ED45"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fetch Meals Take Home/Services/MealsService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "fetchMeals()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7CBE3567-C1FD-41ED-8CDE-4CA5C064ED45 - d6ad4cd143e464bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Fetch_Meals_Take_Home.MealsServiceImpl.fetchMeals() async throws -&gt; Swift.Array&lt;Fetch_Meals_Take_Home.Meal&gt;"
+                  moduleName = "Fetch Meals Take Home"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chad-michaelmuirhead/iOS%20Apps/Fetch%20Meals%20Take%20Home/Fetch%20Meals%20Take%20Home/Services/MealsService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65">
+               </Location>
+               <Location
+                  uuid = "7CBE3567-C1FD-41ED-8CDE-4CA5C064ED45 - d1df55a5fc8306be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Fetch_Meals_Take_Home.MealsServiceImpl.fetchMeals() async throws -&gt; Swift.Array&lt;Fetch_Meals_Take_Home.Meal&gt;"
+                  moduleName = "Fetch Meals Take Home"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chad-michaelmuirhead/iOS%20Apps/Fetch%20Meals%20Take%20Home/Fetch%20Meals%20Take%20Home/Services/MealsService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

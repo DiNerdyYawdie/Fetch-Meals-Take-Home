@@ -8,12 +8,12 @@
 import Foundation
 
 struct MealResponse: Identifiable, Decodable {
-    var id = UUID()
+    let id = UUID()
     let meals: [Meal]
 }
 
 struct Meal: Identifiable, Decodable {
-    var id = UUID()
+    let id = UUID()
     let strMeal: String
     let strMealThumb: URL
     let idMeal: String
