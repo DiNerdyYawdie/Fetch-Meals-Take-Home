@@ -13,6 +13,9 @@ class MealsViewModel: ObservableObject {
     
     @Published var isLoading: Bool = false
     
+    @Published var errorMessage: String = ""
+    @Published var showErrorAlert: Bool = false
+    
     let services: MealsService
     
     init(services: MealsService) {
@@ -29,9 +32,13 @@ class MealsViewModel: ObservableObject {
             
             self.meals = meals.sorted { $0.strMeal < $1.strMeal }
             isLoading = false
-        } catch {
+        } catch let error as MealServiceError {
             isLoading = false
-            print(error)
+            errorMessage = error.errorMessage
+            showErrorAlert.toggle()
+        } catch {
+            errorMessage = error.localizedDescription
+            showErrorAlert.toggle()
         }
     }
 }

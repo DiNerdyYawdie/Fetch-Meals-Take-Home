@@ -23,7 +23,18 @@
 		6ED2EB632C9C5211002131D5 /* MealDetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2EB622C9C5211002131D5 /* MealDetailRowView.swift */; };
 		6ED2EB652C9C533D002131D5 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2EB642C9C533D002131D5 /* ImageCacheService.swift */; };
 		6ED2EB672C9C5369002131D5 /* MealRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2EB662C9C5369002131D5 /* MealRowViewModel.swift */; };
+		6ED2EB6F2C9C55CF002131D5 /* Fetch_Meals_Take_HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2EB6E2C9C55CF002131D5 /* Fetch_Meals_Take_HomeTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6ED2EB702C9C55CF002131D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E1271292C9A897400293DD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E1271302C9A897400293DD0;
+			remoteInfo = "Fetch Meals Take Home";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6E1271312C9A897400293DD0 /* Fetch Meals Take Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch Meals Take Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,10 +54,19 @@
 		6ED2EB622C9C5211002131D5 /* MealDetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailRowView.swift; sourceTree = "<group>"; };
 		6ED2EB642C9C533D002131D5 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		6ED2EB662C9C5369002131D5 /* MealRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRowViewModel.swift; sourceTree = "<group>"; };
+		6ED2EB6C2C9C55CF002131D5 /* Fetch Meals Take HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetch Meals Take HomeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ED2EB6E2C9C55CF002131D5 /* Fetch_Meals_Take_HomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_Meals_Take_HomeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6E12712E2C9A897400293DD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED2EB692C9C55CF002131D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				6E1271332C9A897400293DD0 /* Fetch Meals Take Home */,
+				6ED2EB6D2C9C55CF002131D5 /* Fetch Meals Take HomeTests */,
 				6E1271322C9A897400293DD0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				6E1271312C9A897400293DD0 /* Fetch Meals Take Home.app */,
+				6ED2EB6C2C9C55CF002131D5 /* Fetch Meals Take HomeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,6 +189,14 @@
 			path = "Meal Detail Row";
 			sourceTree = "<group>";
 		};
+		6ED2EB6D2C9C55CF002131D5 /* Fetch Meals Take HomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				6ED2EB6E2C9C55CF002131D5 /* Fetch_Meals_Take_HomeTests.swift */,
+			);
+			path = "Fetch Meals Take HomeTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,6 +217,24 @@
 			productReference = 6E1271312C9A897400293DD0 /* Fetch Meals Take Home.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6ED2EB6B2C9C55CF002131D5 /* Fetch Meals Take HomeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6ED2EB722C9C55CF002131D5 /* Build configuration list for PBXNativeTarget "Fetch Meals Take HomeTests" */;
+			buildPhases = (
+				6ED2EB682C9C55CF002131D5 /* Sources */,
+				6ED2EB692C9C55CF002131D5 /* Frameworks */,
+				6ED2EB6A2C9C55CF002131D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6ED2EB712C9C55CF002131D5 /* PBXTargetDependency */,
+			);
+			name = "Fetch Meals Take HomeTests";
+			productName = "Fetch Meals Take HomeTests";
+			productReference = 6ED2EB6C2C9C55CF002131D5 /* Fetch Meals Take HomeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,6 +247,10 @@
 				TargetAttributes = {
 					6E1271302C9A897400293DD0 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					6ED2EB6B2C9C55CF002131D5 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 6E1271302C9A897400293DD0;
 					};
 				};
 			};
@@ -216,6 +268,7 @@
 			projectRoot = "";
 			targets = (
 				6E1271302C9A897400293DD0 /* Fetch Meals Take Home */,
+				6ED2EB6B2C9C55CF002131D5 /* Fetch Meals Take HomeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -227,6 +280,13 @@
 			files = (
 				6E12713C2C9A897500293DD0 /* Preview Assets.xcassets in Resources */,
 				6E1271392C9A897500293DD0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED2EB6A2C9C55CF002131D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +314,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6ED2EB682C9C55CF002131D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED2EB6F2C9C55CF002131D5 /* Fetch_Meals_Take_HomeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6ED2EB712C9C55CF002131D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E1271302C9A897400293DD0 /* Fetch Meals Take Home */;
+			targetProxy = 6ED2EB702C9C55CF002131D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6E12713D2C9A897500293DD0 /* Debug */ = {
@@ -436,6 +512,50 @@
 			};
 			name = Release;
 		};
+		6ED2EB732C9C55CF002131D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DN8DWXSMN8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dinerd.Fetch-Meals-Take-HomeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fetch Meals Take Home.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fetch Meals Take Home";
+			};
+			name = Debug;
+		};
+		6ED2EB742C9C55CF002131D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DN8DWXSMN8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dinerd.Fetch-Meals-Take-HomeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fetch Meals Take Home.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fetch Meals Take Home";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -453,6 +573,15 @@
 			buildConfigurations = (
 				6E1271402C9A897500293DD0 /* Debug */,
 				6E1271412C9A897500293DD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ED2EB722C9C55CF002131D5 /* Build configuration list for PBXNativeTarget "Fetch Meals Take HomeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ED2EB732C9C55CF002131D5 /* Debug */,
+				6ED2EB742C9C55CF002131D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

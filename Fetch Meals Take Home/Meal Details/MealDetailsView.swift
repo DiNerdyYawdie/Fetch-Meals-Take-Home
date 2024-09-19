@@ -24,7 +24,7 @@ struct MealDetailsView: View {
 
                     
                     Section {
-                        List(mealDetails.ingredientsAndMeasurements, id: \.ingredient) { mealMeasurements in
+                        List(mealDetails.ingredientsAndMeasurements) { mealMeasurements in
                             
                             MealDetailRowView(mealMesurements: mealMeasurements)
                             

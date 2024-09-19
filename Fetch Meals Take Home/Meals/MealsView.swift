@@ -29,6 +29,14 @@ struct MealsView: View {
             .task {
                 await viewModel.fetchMeals()
             }
+            .overlay {
+                if viewModel.isLoading {
+                    ProgressView(LocalizedStringKey("Loading Meals..."))
+                }
+            }
+            .alert(isPresented: $viewModel.showErrorAlert, content: {
+                Alert(title: Text(viewModel.errorMessage))
+            })
         }
     }
 }

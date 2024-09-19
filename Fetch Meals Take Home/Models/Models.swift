@@ -78,8 +78,8 @@ struct MealDetail: Identifiable, Decodable {
     let strMeasure19: String?
     let strMeasure20: String?
     
-    // MARK: Computer property
-    var ingredientsAndMeasurements: [(ingredient: String, measurement: String)] {
+    // MARK: Computed property to better handle Ingredients and measurements
+    var ingredientsAndMeasurements: [IngredientMeasurement] {
         let ingredients = [
             strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5,
             strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10,
@@ -94,16 +94,20 @@ struct MealDetail: Identifiable, Decodable {
             strMeasure16, strMeasure17, strMeasure18, strMeasure19, strMeasure20
         ]
         
-        // Combine ingredients and measurements
+        // Combine ingredients and measurements, filtering out nil and empty values
         return zip(ingredients, measurements)
             .compactMap { (ingredient, measurement) in
-                // Filter out any nil and empty string values for ingredients and measurements
-                /// This will maake it easier for using an array
                 if let ingredient = ingredient, !ingredient.trimmingCharacters(in: .whitespaces).isEmpty,
                    let measurement = measurement, !measurement.trimmingCharacters(in: .whitespaces).isEmpty {
-                    return (ingredient, measurement)
+                    return IngredientMeasurement(ingredient: ingredient, measurement: measurement)
                 }
                 return nil
             }
     }
+}
+
+struct IngredientMeasurement: Identifiable, Hashable {
+    let id = UUID()
+    let ingredient: String
+    let measurement: String
 }

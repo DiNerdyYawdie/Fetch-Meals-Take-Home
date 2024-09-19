@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MealDetailRowView: View {
     
-    let mealMesurements: (ingredient: String, measurement: String)
+    let mealMesurements: IngredientMeasurement
     
     var body: some View {
         HStack {
@@ -24,5 +24,5 @@ struct MealDetailRowView: View {
 }
 
 #Preview {
-    MealDetailRowView(mealMesurements: (ingredient: "Sugar", measurement: "1/4 cup"))
+    MealDetailRowView(mealMesurements: IngredientMeasurement(ingredient: "Sugar", measurement: "1/4 cup"))
 }
