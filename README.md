@@ -32,10 +32,18 @@ For the project i used the MVVM architecture to allow for great separation of th
     4. `MealDetailRowView` - used to show the Ingredeint & measurements for the meal in the detail screen
     
 
-## Services
+## API Services
 
     1. `MealsService` - used to fetch the list of meals provided by the API and also the details for a specific meal
     2. Provides custom errors `MealServiceError`, allow with a readable error message using `errorMessage` property it has
+ 
+ ## Image Cache Service
+ Originally i was using AsyncImage, but since this doesnt provide caching I used a basic local caching dictionary. This is used for storing already downloaded UIImages allow with their URL as a key.
+ 1. After an image is downloaded it is saved to the local dictionary cache
+ 2. If we need it again we fetch from the dictionary instead of redownloading
+ 
+ Note: I could also have used a 3rd Party for handling caching like `SDWEbImageSwiftUI`   
+    
     
 ## Meal Categories
 
