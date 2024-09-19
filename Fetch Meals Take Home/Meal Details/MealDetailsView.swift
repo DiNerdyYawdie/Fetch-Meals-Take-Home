@@ -8,11 +8,35 @@
 import SwiftUI
 
 struct MealDetailsView: View {
+    
+    @ObservedObject var viewModel: MealDetailsViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                if let mealDetails = viewModel.mealDetails {
+                    
+                    Text(mealDetails.strMeal)
+                    
+                    Text(mealDetails.strInstructions)
+                    
+                    List(mealDetails.ingredientsAndMeasurements, id: \.ingredient) { mealMeasurements in
+                        Text(mealMeasurements.ingredient)
+                        
+                        Text(mealMeasurements.measurement)
+                    }
+                    
+                } else {
+                    ContentUnavailableView("Unable to fetch details for this meal", systemImage: "carrot.fill")
+                }
+            }
+            .task {
+                await viewModel.fetchMealDetails()
+            }
+        }
     }
 }
 
 #Preview {
-    MealDetailsView()
+    MealDetailsView(viewModel: MealDetailsViewModel(services: MealsServiceImpl(), mealID: "1234"))
 }
