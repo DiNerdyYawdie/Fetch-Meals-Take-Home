@@ -11,6 +11,8 @@ import Foundation
 @MainActor
 class RowViewModel: ObservableObject {
     
+    // Update the uiimage if we already have one stored in our dictionary cache
+    //  Or download the data and create a uiimage and assign it
     @Published var uiImage: UIImage?
     
     let meal: Meal
@@ -21,6 +23,7 @@ class RowViewModel: ObservableObject {
         self.cacheService = cacheService
     }
     
+    // Get image data from cache or download it if needed
     func loadImage() async {
         uiImage = await cacheService.loadImage(url: meal.strMealThumb)
     }

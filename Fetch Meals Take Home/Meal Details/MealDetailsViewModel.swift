@@ -13,6 +13,9 @@ class MealDetailsViewModel: ObservableObject {
     
     @Published var isLoading: Bool = false
     
+    @Published var errorMessage: String = ""
+    @Published var showErrorAlert: Bool = false
+    
     let services: MealsService
     let mealID: String
     
@@ -22,6 +25,7 @@ class MealDetailsViewModel: ObservableObject {
         
     }
     
+    /// Fetch details for the meal based on `mealID`
     @MainActor
     func fetchMealDetails() async {
         do {
@@ -31,9 +35,14 @@ class MealDetailsViewModel: ObservableObject {
             
             self.mealDetails = meals.first
             isLoading = false
+        } catch let customError as MealServiceError {
+            isLoading = false
+            errorMessage = customError.errorMessage
+            showErrorAlert.toggle()
         } catch {
             isLoading = false
-            print(error)
+            errorMessage = error.localizedDescription
+            showErrorAlert.toggle()
         }
     }
 }
