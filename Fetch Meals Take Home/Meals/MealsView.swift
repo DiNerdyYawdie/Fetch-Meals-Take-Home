@@ -14,8 +14,30 @@ struct MealsView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Test")
+                List(viewModel.meals) { meal in
+                    GroupBox {
+                        VStack(alignment: .leading) {
+                            
+                            // TODO: switch to SDWebImageSwiftUI or implement local caching for images
+                            AsyncImage(url: meal.strMealThumb) { image in
+                                image
+                                    .resizable()
+                                    .frame(height: 200)
+                                    .frame(maxWidth: .infinity)
+                                    .cornerRadius(4)
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            
+                            Text(meal.strMeal)
+                                .font(.title3)
+                                .fontWeight(.medium)
+
+                        }
+                    }
+                }
             }
+            .listStyle(.plain)
             .task {
                 await viewModel.fetchMeals()
             }
