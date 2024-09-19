@@ -14,14 +14,14 @@ import Foundation
 
 enum Endpoints {
     case mealsList(mealCategory: String)
-    case mealDetail
+    case mealDetail(mealID: String)
     
     var endpoint: String {
         switch self {
         case .mealsList(let mealCategory):
             return "https://themealdb.com/api/json/v1/1/filter.php?c=\(mealCategory)"
-        case .mealDetail:
-            return "https://themealdb.com/api/json/v1/1/lookup.php?i=MEAL"
+        case .mealDetail(let mealID):
+            return "https://themealdb.com/api/json/v1/1/lookup.php?i=\(mealID)"
         }
     }
 }

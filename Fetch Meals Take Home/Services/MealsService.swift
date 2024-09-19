@@ -9,6 +9,7 @@ import Foundation
 
 protocol MealsService {
     func fetchMeals(mealCategory: MealCategories) async throws -> [Meal]
+    func fetchMealDetails(mealID: String) async throws -> [MealDetail]
 }
 
 enum MealServiceError: Error {
@@ -61,7 +62,34 @@ class MealsServiceImpl: MealsService {
             
             let mealResponse = try JSONDecoder().decode(MealResponse.self, from: data)
             return mealResponse.meals
-        } catch let decodingError as DecodingError {
+        } catch is DecodingError {
+            throw MealServiceError.decodeError
+        } catch is URLError {
+            throw MealServiceError.urlError
+        } catch {
+            throw MealServiceError.unknown(description: error.localizedDescription)
+        }
+    }
+    
+    func fetchMealDetails(mealID: String) async throws -> [MealDetail] {
+        guard let url = URL(string: Endpoints.mealDetail(mealID: mealID).endpoint) else {
+            throw MealServiceError.urlError
+        }
+        
+        do {
+            let (data, response) = try await session.data(from: url)
+            
+            guard let httpURLResponse = response as? HTTPURLResponse else {
+                throw MealServiceError.urlResponseError
+            }
+            
+            guard (200...299).contains(httpURLResponse.statusCode) else {
+                throw MealServiceError.httpError(statusCode: String(httpURLResponse.statusCode))
+            }
+            
+            let mealDetailResponse = try JSONDecoder().decode(MealDetailResponse.self, from: data)
+            return mealDetailResponse.meals
+        } catch is DecodingError {
             throw MealServiceError.decodeError
         } catch is URLError {
             throw MealServiceError.urlError
